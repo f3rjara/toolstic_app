@@ -91,15 +91,23 @@ class FontVariables
 					),
 				),
 			 */
-
+			
+				
 			'fontdata' => [
+				"comfortaregular" => [
+					'R' => "Comfortaa-Regular.ttf",
+				],
+				"comfortaligth" => [
+					'R' => "Comfortaa-Light.ttf",
+				],
+				"comfortabold" => [
+					'R' => "Comfortaa-Bold.ttf",
+				],
 				"dejavusanscondensed" => [
 					'R' => "DejaVuSansCondensed.ttf",
 					'B' => "DejaVuSansCondensed-Bold.ttf",
 					'I' => "DejaVuSansCondensed-Oblique.ttf",
 					'BI' => "DejaVuSansCondensed-BoldOblique.ttf",
-					'useOTL' => 0xFF,
-					'useKashida' => 75,
 				],
 				"dejavusans" => [
 					'R' => "DejaVuSans.ttf",
