@@ -3,7 +3,7 @@
     include_once (ROOT_INCLUDE."/connect.php");  
     include_once (ROOT_INCLUDE.'/fetch_array.php'); 
     include_once (ROOT_MAIN.'/views/sesion_student.php');     
-    if( $_SESSION['error_user'] === FALSE ) { header("Location: '.ROOT_MEDIA_USER.'/student/");  }
+    if( $_SESSION['error_user'] === FALSE ) { header('Location: '.ROOT_MEDIA_USER.'/student/ ');  }
     
 ?>
 
