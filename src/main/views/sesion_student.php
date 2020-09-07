@@ -8,7 +8,6 @@
     }
     else{
         $_SESSION['error_user'] = TRUE;
-        
     }
 
 ?>
