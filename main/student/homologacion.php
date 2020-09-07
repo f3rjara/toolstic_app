@@ -3,8 +3,9 @@
     include_once (ROOT_INCLUDE."/connect.php");  
     include_once (ROOT_INCLUDE.'/fetch_array.php'); 
     include_once (ROOT_MAIN.'/views/sesion_student.php'); 
-    if( $_SESSION['error_user'] != FALSE && $_SESSION['user_student'] == NULL) { header('Location: '.ROOT_MEDIA_USER.'/');   }   
+    if( !isset($_SESSION['user_student']) || ($_SESSION['error_user'] != FALSE && $_SESSION['user_student'] == NULL )) { header('Location: '.ROOT_MEDIA_USER.'/');   }   
     $_SESSION['btnPresentaPrueba'] = FALSE;
+    $_SESSION['UserInteraction'] = FALSE;
 ?>
 
 <html lang="es">
@@ -43,33 +44,38 @@
             <div class="col s12 m10 push-m1 center">
                 <?php 
                     $EstudianteReload = DatosEstudiantesReload($conex, $userlog['cod_estudiante']);                             
-                    if($EstudianteReload['estudiante_habilitado'] == 1) { 
+                    if( $EstudianteReload['estudiante_habilitado'] == 1 ) { 
                         $EstudianteInscritoPrueba = EstudianteInscrito($userlog['cod_estudiante'], $conex);
-                        if($EstudianteInscritoPrueba['bandera']){                            
-                            if($EstudianteReload['realizo_prueba'] == 0){  
+
+                        if( $EstudianteInscritoPrueba['bandera'] ) {                            
+                            if( $EstudianteReload['realizo_prueba'] == 0 ) {  
+
                                 $idInscripcion =  $EstudianteInscritoPrueba['data']['id_inscripcion_prueba']; 
                                 $idGrupo =  $EstudianteInscritoPrueba['data']['id_grupo'];             
                                 $dataInscripcion = FullDatosInsctipcion($idGrupo, $conex);
-                                if($dataInscripcion['id_estado_prueba'] == 3) { 
+
+                                if( $dataInscripcion['id_estado_prueba'] == 3 ) { 
                                     $BanderaHorario = VerificacionHorarioGrupo($dataInscripcion['id_estado_prueba'],$dataInscripcion['horario_grupo']);
-                                    if($BanderaHorario['bandera']){ 
+
+                                    if( $BanderaHorario['bandera'] ) { 
                                         // VERIFICACIÓN SI TIENE UN CUESTIONARIO EN CURSO O NO
                                         $NoIntentosCues = IntenoStudent($conex, $userlog['cod_estudiante']);  
                                         $encripCod = md5($userlog['cod_estudiante']);                                       
                                         
-                                        if( $NoIntentosCues !== NULL ){
+                                        if( $NoIntentosCues !== NULL ) {
                                             // SE RECUPERAN PREGUNTAS Y RESPUESTAS GUARDAS POR EL ESTUDIANTE Y ACCESO A CUESTIONARIO
                                             $_SESSION['btnPresentaPrueba'] = TRUE; 
                                             include_once (ROOT_MAIN.'/views/reload-cuestionario.php');
+                                            include_once (ROOT_MAIN.'/views/info-prueba.php');
                                             include_once (ROOT_MAIN.'/views/info-prueba-reload-cues.php');
                                         }
                                         else {
                                             // SE HABILITA EL ACCESO A UN NUEVO CUESTIONARIO POR EL ESTUDIANTE  
                                             $_SESSION['btnPresentaPrueba'] = TRUE; 
                                             include_once (ROOT_MAIN.'/views/new-cuestionario.php');
+                                            include_once (ROOT_MAIN.'/views/info-prueba.php');
                                             include_once (ROOT_MAIN.'/views/info-prueba-new-cues.php');
-                                        }                                        
-
+                                        } 
                                     }
                                     else { 
                                         // NO ES HORA PARA LA PRESENTACION DEL CUESTIONARIO    

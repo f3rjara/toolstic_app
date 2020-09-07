@@ -26,7 +26,7 @@
         </div>
 
         <div class='chip orange white-text'>
-            <span><b>prueba no disponible</b></span>
+            <span><b>Prueba no disponible</b></span>
         </div>
 
         <div class='chip red white-text'>
