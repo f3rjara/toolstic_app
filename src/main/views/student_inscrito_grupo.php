@@ -1,9 +1,9 @@
 <?php
    
     $FullDataInsc = FullDataInscEstu($conex, $EstudianteReload['cod_estudiante']);
-    
-    $fechaAplicacion = strftime("%d de %b del %Y",strtotime($FullDataInsc['fecha_aplicacion_prueba']));
 
+    $fechaAplicacion = strftime("%d de %b del %Y",strtotime($FullDataInsc['fecha_aplicacion_prueba']));
+    
     list($fechaIN, $horaIN) = explode(" ",$FullDataInsc['fecha_inscripcion']);
                             
     $fechaInscripcion = strftime("%d de %b del %Y",strtotime($fechaIN));
@@ -81,24 +81,6 @@
         <input id='LugarSede' type='text' class='validate infoEstu' disabled value='<?php echo ($FullDataInsc['lugar_sede']);?>'>
         <label for='LugarSede' class="labelInfo">Lugar de presentación</label>
     </div>
-
-    <div class='input-field col s12 m6'>
-        <i class='material-icons prefix'>supervisor_account</i>
-        <input id='GrupoEstu' type='text' class='validate infoEstu' disabled value='<?php echo ($FullDataInsc['grupo']);?>'>
-        <label for='GrupoEstu' class="labelInfo">Grupo inscrito</label>
-    </div>
-
-    <div class='input-field col s12 m6'>
-        <i class='material-icons prefix'>location_searching</i>
-        <input id='AulaPrueba' type='text' class='validate infoEstu' disabled value='<?php echo "Aula - ".($FullDataInsc['aula_grupo']);?>'>
-        <label for='AulaPrueba' class="labelInfo">Aula de presentación</label>
-    </div>
-
-    <div class='input-field col s12 m6'>
-        <i class='material-icons prefix'>announcement</i>
-        <input id='AulaPrueba' type='text' class='validate infoEstu' disabled value='<?php echo ($FullDataInsc['estado_prueba']);?>'>
-        <label for='AulaPrueba' class="labelInfo">Estado de la prueba</label>
-    </div>   
     
 </div> 
 
@@ -109,7 +91,7 @@
         <div class='chip ToolsTic_blue white-text'>
             <span><b>Detalle de la inscripción</b></span>
         </div> 
-    </div>    <br>
+    </div><br>
 
     <div class='input-field col s12 m6'>
         <i class='material-icons prefix'>supervisor_account</i>
@@ -123,7 +105,21 @@
         <input id='FechaInscripcion' type='text' class='validate infoEstu' disabled value='<?php echo ($fechaInscripcion." a las ". 
     $horaInscripcion);?>'>
         <label for='FechaInscripcion' class="labelInfo">Fecha de inscripción del estudiante</label>
-    </div>            
+    </div>   
+
+    <div class='input-field col s12 m6'>
+        <i class='material-icons prefix'>location_searching</i>
+        <input id='AulaPrueba' type='text' class='validate infoEstu' disabled value='<?php echo "Aula - ".($FullDataInsc['aula_grupo']);?>'>
+        <label for='AulaPrueba' class="labelInfo">Aula de presentación</label>
+    </div>
+
+    <div class='input-field col s12 m6'>
+        <i class='material-icons prefix'>announcement</i>
+        <input id='AulaPrueba' type='text' class='validate infoEstu' disabled value='<?php echo ($FullDataInsc['estado_prueba']);?>'>
+        <label for='AulaPrueba' class="labelInfo">Estado de la prueba</label>
+    </div>   
+
+
        
 </div>
 
