@@ -6,7 +6,7 @@ $DataInscripcionEstu = EstudianteInscrito($userlog['cod_estudiante'], $conex );
 // OBTENCION DE DATOS PARA CUESTIOANRIO
 $DataNewCues = array(
     "id_inscripcion" => $DataInscripcionEstu['data']['id_inscripcion_prueba'],
-    "cod_estudiante" => $userlog['cod_estudiante'],
+    "cod_estudiante" => $StudneReload['cod_estudiante'],
     "creacion_cuestionario" => $FechaSistema['date'],
     "inicio_cuestionario" => $FechaSistema['date'],
     "estado_cuestionario" => "3",
@@ -17,7 +17,7 @@ $DataNewCues = array(
 $NumPrgSave = 0;
 //VERIFICAR EL CUESTIONARIO Y CANTIDAD
 $TieneCuestionarios = IntenoStudent($conex, $StudneReload['cod_estudiante']);
-
+$Id_Cuestionario = IntenoStudent($conex, $StudneReload['cod_estudiante']);
 
 if(count($TieneCuestionarios) > 0){
     if ($TieneCuestionarios['id_estado_cuestionario'] == 3) {

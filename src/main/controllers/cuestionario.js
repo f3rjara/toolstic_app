@@ -1,5 +1,3 @@
-let RespuestaNewCues;
-
 
 $(document).ready(function(){
     M.AutoInit();
@@ -34,12 +32,6 @@ $(document).ready(function(){
 });  
 
 
-$(document).ready(function(){ 
-    setTimeout(() => {
-        console.log("data save");
-        console.log(RespuestaNewCues);
-    }, 1000);
-});
 function askConfirmation(evt) {
     var msg = 'Si recarga la página perdera todos los datos no guardados.\n¿Deseas recargar la página?';
     evt.returnValue = msg;

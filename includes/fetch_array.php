@@ -655,6 +655,16 @@ function EstudianteRealizoPrueba($conex, $codigo) {
 }
 
 
+function decodificar_quest($quest){
+    $rwemplaz = "";
+    $rwemplaz= str_replace("â€œ", '"', $quest ); 
+    $rwemplaz= str_replace("â€", '"', $rwemplaz ); 
+    $rwemplaz= str_replace("", '', $rwemplaz ); 
+    $rwemplaz= str_replace("&nbsp;", ' ', $rwemplaz ); 
+    $vaar =  ( html_entity_decode ( $rwemplaz , ENT_HTML5, 'UTF-8'));
+    $vaar = utf8_decode ( $vaar ); 
+    return $vaar;
+}
 
 
 
