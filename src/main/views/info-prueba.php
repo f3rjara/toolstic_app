@@ -300,7 +300,7 @@
 
         <tr class="grey lighten-4">
             <td class="valign-wrapper">
-                &nbsp; <i class="material-icons prefix">timer</i>
+                &nbsp; <i class="material-icons prefix">watch_later</i>
                 &nbsp; <b>Tiempo limite </b>
             </td>
             <td width="60%" class="white">
@@ -325,20 +325,20 @@
                 &nbsp; <b>Asistencia</b>
             </td>
             <td width="60%" class="white">
-                <b> &nbsp; Firma la hoja de asistencia presentada por el docente a cargo de la prueba </b>
+                <b> &nbsp; Firma y/o presentar la asistencia con el docente a cargo del grupo </b>
             </td>                
         </tr>
 
             
         <tr class="grey lighten-4">
             <td class="valign-wrapper">
-                &nbsp; <i class="material-icons prefix">description</i>
+                &nbsp; <i class="material-icons prefix">sim_card_alert</i>
                 &nbsp; <b>Estado cuestionario</b>
             </td>
             <td width="60%" style="padding-top: 0 !important; padding-bottom: 0 !important;"  class="white">
                 &nbsp;
                 <a class="btn orange white-text" >
-                    <b>EN CURSO</b>
+                    <b>CONSULTANDO ESTADO...</b>
                 </a>
             </td>                
         </tr>
