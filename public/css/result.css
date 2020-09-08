@@ -1,0 +1,83 @@
+.puntajeGlobal{
+    padding-top: 50px;
+    padding-bottom: 85px;
+    margin: auto;
+    width: 100%;
+}
+
+.puntajeGlobal div {
+    display: flex !important;
+}
+.puntajeGlobal div h4,i {
+    margin: 0rem 0.8rem 0.912rem 0 !important;
+}
+
+.card-pg{
+    transform: translateY(-45%) !important;
+    padding-bottom: -50px;
+}
+
+.card-pg .card-panel{
+    margin: 0.5rem 0rem 0.1rem 0.7rem !important;  
+    width: 24% !important;
+    height: 190px !important;
+}
+
+.start-i i {    
+    margin: 10px 7%  !important;
+    width: 24px;
+    height: 24px;
+    font-size: 44px;
+}
+
+.start-i {
+    margin-left: -25px !important;
+}
+
+.badgeB{
+    padding-top: 5px !important;
+    padding-right: 8px !important;
+    padding-bottom: 5px !important;
+    padding-left: 8px !important;
+}
+
+/* Mobile Devices  <= 600px */
+@media (max-width: 600px) { 
+    .card-pg{
+        transform: translateY(-5%) !important;
+       
+    }
+
+    .card-pg .card-panel{        
+        width: 97% !important;
+        
+    }
+
+
+}
+
+/* TABLER  Devices  > 600px AND  <=  991px */
+@media (min-width: 601px) and (max-width: 991px) { 
+    .card-pg{
+        transform: translateY(-10%) !important;
+        margin: auto;        
+    }
+    .card-pg .card-panel{
+        margin: 0.5rem 0.5rem 0.5rem 0.5rem !important;   
+       }
+
+    .card-pg .card-panel{        
+        width: 47% !important;        
+    }
+       
+
+}
+
+/* DESKTOP  Devices  > 600px AND  <=  991px */
+@media (min-width: 992px) and (max-width: 1200px) { 
+    
+
+}
+
+
+
