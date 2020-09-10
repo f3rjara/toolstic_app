@@ -4,7 +4,7 @@
     include_once (ROOT_INCLUDE.'/fetch_array.php'); 
     include_once (ROOT_MAIN.'/views/sesion_student.php'); 
     if( $_SESSION['error_user'] != FALSE && $_SESSION['user_student'] == NULL) { header('Location: '.ROOT_MEDIA_USER.'/');   }   
-    
+    $_SESSION['dataReport'] = FALSE;
 ?>
 
 <html lang="es">
@@ -100,6 +100,10 @@
     <!-- INCLUSION DE FUNCTIONS CANCELAR INSCRIPCION -->        
     <script src="<?php echo ROOT_MAIN_CON;?>/controllers/cancelarInscripcion.js"></script> 
 
+    <!-- INCLUSION DE FUNCTIONS GENERATE REPORT INSCRIPCION -->        
+    <script src="<?php echo ROOT_MAIN_CON;?>/controllers/generatereportinsc.js"></script> 
+
+    
 
     <script>
         $(document).ready(function(){
