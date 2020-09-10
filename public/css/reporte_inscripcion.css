@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.head{
+    width: 100%;
+    position: relative;
+    height: 1.5cm;
+    padding-top: 0.1cm;
+    padding-bottom: 0.1cm;
+}
+
+.head .enc1{
+    margin-top: 0.5cm;
+    width: 10cm;   
+    float: left;
+}
+
+.head .enc2{
+    padding-top: -0.35cm;
+    width: 4cm;   
+    float: right;
+}
+
+.img-report{
+    width: 1.4cm;
+    text-align: center;
+    margin: auto;
+}
+
+.titleReport{
+    font-size: 14px;
+    font-weight: 900;
+    text-align: center;
+}
+.titleReport-2{
+    font-size: 12px;
+    font-weight: 900;
+    text-align: center;
+}
+
+hr.line-title{
+    height: 0.1cm;
+    width: 80%;
+    color: green;
+    position: relative;
+}
+
+
+
+
+.title{
+    
+    height: 0.5cm;
+    width: 6cm;
+    background-color: #2D566D;
+    margin-left: 2cm ;
+    border-radius: 20px;
+}
+
+.title .text-title{
+    margin-top: 0.06cm;
+    color: white;
+    font-size: 12px;
+    text-align: center;   
+    font-family: comfortabold;
+}
+
+.info .title-subtitle{
+    color: green;
+    font-family: comfortabold;
+}
+
+.info .text-subtitle{
+    font-family: comfortaligth;
+}
+
+.info .title-subtitle, .info .text-subtitle{
+    font-size: 10px;
+}
+
+.info .text-subtitle{
+    padding-left: 0.3cm;
+}
+
+.campos{
+    float: left;
+    width: 8cm;
+    margin-left: 2cm;
+    margin-top: 0.4cm;
+}
+
+.campos .icon, .campos-2 .icon{
+    float: left;
+    width: 0.1cm;
+}
+
+
+
+.campos .info, .campos-2 .info{
+    padding-left: 0.7cm;
+    
+}
+
+
+.campos-2{
+    float: left;
+    width: 8cm;
+    margin-left: 2cm;
+}
+
+
+
+.datos{
+    padding-top: 0.4cm;
+}
+
+.datos .title{
+    width: 7cm;
+}
+
+.texto-info{
+    float: left;
+    width: 8cm;
+    padding-left: 2cm ;
+    text-align: justify;
+    font-size: 12px;
+    font-family: comfortaligth;
+}
+
+.img-qr{
+    
+    float: left;
+    width: 7cm;
+    margin-left: 3cm;
+    text-align: center;  
+}
+
+.qr{
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    width: 40%;
+
+}
+
+
+.img-qr .inf-calendar{
+    padding-top: 0.5cm;
+    text-align: center;
+    font-size: 12px;
+    font-family: comfortabold;
+}
+
+.footer{
+    width: 100%;
+    text-align: center;
+    margin-top: 0.3cm;
+}
+
+.footer .img-footer{
+    margin: auto;
+    width: 80%;
+}
+
