@@ -5,7 +5,7 @@ function generatereport(response) {
     Swal.fire({
         allowOutsideClick: false,
         title: 'Generando reporte',
-        html: 'Esperun unos segundos mientras se genera el reporte de inscripción.',
+        html: 'Espere unos segundos mientras se genera el reporte de inscripción.',
         timer: 3000,
         onBeforeOpen: () => {                
             Swal.showLoading()

@@ -295,3 +295,7 @@ PARA MOSTAR LOS RESULTADOS SERIA EN LISTAR PREGUNTAS
 .card-carrousel .card {
     margin: 0 !important;
 }
+
+.bold {
+    font-weight: 900;
+}
