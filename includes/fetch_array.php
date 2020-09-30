@@ -293,7 +293,7 @@ function PreguntasDeCompetencia($idComp, $num_preg, $conex, $ArraySave, $cuesSav
 function IntenoStudent($conex, $cod_estu){
     $SqlIntento = "SELECT * FROM cuestionario, estado_cuestionario WHERE cuestionario.cod_estudiante = '".$cod_estu."' AND cuestionario.id_estado_cuestionario = estado_cuestionario.id_estado_cuestionario ORDER BY cuestionario.fecha_creacion_cuestionario DESC";
     $resultSQL = $conex->query($SqlIntento);    
-    $datos = $resultSQL->fetch_assoc();      
+    $datos =  $resultSQL->fetch_assoc() ;
     return $datos;
 }
 

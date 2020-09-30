@@ -1,4 +1,4 @@
-<div class="row"  >
+<div class="row" style="display:none" >
     <?php 
     //style="display:none"
         $ResPregExa = ObtenerOpcionesRespuestas($FullPregunCues[$prgs -1]['id_pregunta'], $conex);          

@@ -13,7 +13,7 @@ function SaveAnswerPost(arrayRes){
     });
   
     
-      console.log(arrayRes);
+    console.log(arrayRes);
       $.ajax({
           type: "POST",
           data: {
@@ -26,7 +26,7 @@ function SaveAnswerPost(arrayRes){
               id_pregunta: arrayRes['id_pregunta']        
           },
           //dataType: 'json',
-          url: "php/SaveAnswerPost.php",       
+          url: GetUrl.ROOT_MAIN_CON + "/models/SaveAnswerPost.php",       
           success: function(res){   
               console.log(res);
               var data = jQuery.parseJSON(res);         

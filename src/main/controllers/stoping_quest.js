@@ -1,58 +1,52 @@
 function Stopearquestion(){
-    console.log("Se detiene todo los servicios y se pide el ennvio de todo");
+    console.log("Se detiene todo los servicios y se solicita el envio");
     $('.card-panel').removeAttr('onclick');
 
     setTimeout(function(){
 
     let timerInterval2
         Swal.fire({
-        title: 'Tiempo Finalizado!',
-        html: 'Verifique las respuestas guardadas y envie su cuestionario para generar los resultados correspondientes. <br>  Podrás continuar en : <b></br> ms.',
-        timer: 5500,
-        allowEscapeKey: false,
-        allowOutsideClick: false,
-        timerProgressBar: true,
-        onBeforeOpen: () => {
-            Swal.showLoading()
-            timerInterval2 = setInterval(() => {
-            const content = Swal.getContent()
-            if (content) {
-                const b = content.querySelector('b')
-                if (b) {
-                b.textContent = Swal.getTimerLeft()
+            title: 'Tiempo Finalizado!',
+            html: 'Verifique las respuestas guardadas y envie su cuestionario para generar los resultados correspondientes. <br>  Podrás continuar en : <b></br> ms.',
+            timer: 5500,
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            timerProgressBar: true,
+            onBeforeOpen: () => {
+                Swal.showLoading()
+                timerInterval2 = setInterval(() => {
+                const content = Swal.getContent()
+                if (content) {
+                    const b = content.querySelector('b')
+                    if (b) {
+                    b.textContent = Swal.getTimerLeft()
+                    }
                 }
+                }, 100)
+            },
+            onClose: () => {
+                clearInterval(timerInterval2)
             }
-            }, 100)
-        },
-        onClose: () => {
-            clearInterval(timerInterval2)
-        }
         }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('Drigiendo a la Tab 51');
-            $('.tabs').tabs('select', 'prg51'); 
-            $("body, main").animate({ scrollTop: ($('.tabs')[0].scrollHeight)+500}, 1500);
-            $('.tabs').scrollLeft(2900);
-        }
-    });
-
-},1700);
-
-
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('Drigiendo a la Tab 51');
+                $('.tabs').tabs('select', 'prg51'); 
+                $("body, main").animate({ scrollTop: ($('.tabs')[0].scrollHeight)+500 }, 1500);
+                $('.tabs').scrollLeft(2900);
+            }
+        });
+    },1700);
 }
 
 
 
 
-
-
-
-function GuardarRespuesta(num_prg, id_prg,id_cuestionario,cod_estudiante,ip_estudiante){
+function GuardarRespuesta( num_prg , id_prg, id_cuestionario, cod_estudiante, ip_estudiante ){
 
     var id_respuesta = $('input:radio[name=GRPP_'+num_prg+']:checked').val();
 
-    if((id_respuesta % 5) == 0){        
+    if(( id_respuesta % 5 ) == 0){        
         $('#liprg'+num_prg).removeClass().addClass('tab orange');
 
         $('#BtnStatusPrg'+num_prg).removeClass().addClass('btn orange');
@@ -107,7 +101,7 @@ function GuardarRespuesta(num_prg, id_prg,id_cuestionario,cod_estudiante,ip_estu
 
 
 
-function Selectoption(num_repuesta, num_pregunta){      
+function Selectoption( num_repuesta, num_pregunta ){      
     if(num_repuesta == 1){ 
         $('#OR1PP'+num_pregunta).removeClass('white black').addClass('green');
 
@@ -175,9 +169,6 @@ function Selectoption(num_repuesta, num_pregunta){
         $('#OR2PP'+num_pregunta+' p').removeClass('white-text').addClass('black-text');
         $('#OR3PP'+num_pregunta+' p').removeClass('white-text').addClass('black-text');
         $('#OR4PP'+num_pregunta+' p').removeClass('black-text').addClass('white-text');
-
-
-
 
         $('#resp1_prg'+num_pregunta).attr( 'checked', false);
         $('#resp2_prg'+num_pregunta).attr( 'checked', false);

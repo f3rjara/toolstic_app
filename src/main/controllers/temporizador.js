@@ -1,10 +1,8 @@
 //SE ANALIZA LA FECHA DE INGRESO AL SISTEMA
 function TemporizadorDesde(min){
-    var minu = (90 - parseInt(min))-1;  
-    var fechaInicio = new Date();
-    fechaInicio.setMinutes(fechaInicio.getMinutes()+minu);
-      
-  
+  var minu = ( 90 - parseInt(min) ) - 1;  
+  var fechaInicio = new Date();
+  fechaInicio.setMinutes(fechaInicio.getMinutes()+minu);
   
   // Set the date we're counting down to
   var countDownDate = new Date(fechaInicio).getTime();
@@ -49,5 +47,5 @@ function TemporizadorDesde(min){
       Stopearquestion();
     }
   }, 1000);
-  }
+}
   

@@ -1,4 +1,4 @@
-function GenerarCuestionarioLog(Intento_estudiante_LOG,inscripcion,cod_estudiante_LOG,Fecha1,IpEstudiante_LOG){
+function GenerarCuestionarioLog( Intento_estudiante_LOG, inscripcion, cod_estudiante_LOG, Fecha1, IpEstudiante_LOG ){
      
     $.ajax({
       type: "POST",
@@ -10,7 +10,7 @@ function GenerarCuestionarioLog(Intento_estudiante_LOG,inscripcion,cod_estudiant
         Ip_estudiante: IpEstudiante_LOG ,         
       },
       //dataType: 'json',
-      url: "php/GeneraCuestionario.php",       
+      url: GetUrl.ROOT_MAIN_CON + "/models/GeneraCuestionario.php",       
       success: function(res){   
           var data = jQuery.parseJSON(res);         
           console.log(data['restext']);

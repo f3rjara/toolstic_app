@@ -17,9 +17,9 @@ $DataNewCues = array(
 $NumPrgSave = 0;
 //VERIFICAR EL CUESTIONARIO Y CANTIDAD
 $TieneCuestionarios = IntenoStudent($conex, $StudneReload['cod_estudiante']);
-$Id_Cuestionario = IntenoStudent($conex, $StudneReload['cod_estudiante']);
 
-if(count($TieneCuestionarios) > 0){
+
+if( $TieneCuestionarios !== NULL && count($TieneCuestionarios) > 0 ){
     if ($TieneCuestionarios['id_estado_cuestionario'] == 3) {
         # EL CUESTIONARIO ESTA EN CURSO 
         $ReiniciarTempo = True;

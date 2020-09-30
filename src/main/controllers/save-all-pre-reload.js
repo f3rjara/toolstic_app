@@ -1,5 +1,6 @@
-function SavAllOPRReload(id_cu, cod){
+function SavAllOPRReload( id_cu, cod ){
     console.log( "Recuperando las respuestas seleccionadas" );
+    console.log(GetUrl.ROOT_MAIN_CON + "/models/SaveAllAnswerPostReload.php");
     var ArrayOPCHK = new Array;
     
     for(var i=1; i < 51; i++){        
@@ -15,7 +16,7 @@ function SavAllOPRReload(id_cu, cod){
             cod_estu: cod  
         },
         //dataType: 'json',
-        url: "php/SaveAllAnswerPostReload.php",       
+        url: GetUrl.ROOT_MAIN_CON + "/models/SaveAllAnswerPostReload.php",       
         success: function(res){   
             //console.log(res);
             var data = jQuery.parseJSON(res);         

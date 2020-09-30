@@ -299,3 +299,7 @@ PARA MOSTAR LOS RESULTADOS SERIA EN LISTAR PREGUNTAS
 .bold {
     font-weight: 900;
 }
+
+.RespCard {
+    cursor: pointer !important;
+}

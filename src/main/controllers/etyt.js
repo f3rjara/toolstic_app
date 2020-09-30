@@ -28,7 +28,7 @@ function SavAllOPR(id_cu, cod){
                     cod_estu: cod  
                 },
                 //dataType: 'json',
-                url: "php/SaveAllAnswerPost.php",       
+                url: GetUrl.ROOT_MAIN_CON + "/models/SaveAllAnswerPost.php",       
                 success: function(res){   
                     //console.log(res);
                     var data = jQuery.parseJSON(res);         

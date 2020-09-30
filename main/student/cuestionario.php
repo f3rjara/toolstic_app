@@ -13,6 +13,7 @@
             $StudneReload = DatosEstudiantesReload($conex,$userlog['cod_estudiante']);
             $VieneBoton = True;     
             $ReiniciarTempo = False;   
+            
         ?>
 
 <html lang="es">
@@ -48,6 +49,7 @@
             <?php
                 // CHECK STRIC NEW OR OLD CUEST.
                 include_once (ROOT_MAIN.'/views/check_cuest.php');
+                $Id_Cuestionario = IntenoStudent($conex, $StudneReload['cod_estudiante']);
                 //INCLUDE INSTRUCCIONES Y TIEMPO
                 include_once (ROOT_MAIN.'/views/instruction_cuest.php');
                 //INCLUDE TABS 1 A 50 Y FIN
@@ -138,7 +140,7 @@
 
     <script>
         $(document).ready(function(){  
-            //RespuestaNewCues = "<?php// echo $ResponseCuestionario['res']; ?>";
+            RespuestaNewCues = "<?php echo $ResponseCuestionario['res']; ?>";
             if(RespuestaNewCues == 'true'){
                 Toast.fire({
                     type: 'success',
