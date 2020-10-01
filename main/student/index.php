@@ -4,7 +4,8 @@
     include_once (ROOT_INCLUDE.'/fetch_array.php'); 
     include_once (ROOT_MAIN.'/views/sesion_student.php'); 
     if( $_SESSION['error_user'] != FALSE && $_SESSION['user_student'] == NULL) { header('Location: '.ROOT_MEDIA_USER.'/');   }   
-    
+    $_SESSION['btnPresentaPrueba'] = FALSE;
+    $_SESSION['UserInteraction'] = FALSE;
 ?>
 
 <html lang="es">

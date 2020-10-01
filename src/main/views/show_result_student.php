@@ -81,9 +81,9 @@
         </div>
         
         <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>graphic_eq</i>
-            <input id='PuntajeObtenido' type='text' class='validate infoEstu' disabled value='<?php echo $ResultCuestEstu['puntaje_final'] ." / 5";?>'>
-            <label for='PuntajeObtenido'>Puntaje final obtenido</label>
+            <i class='material-icons prefix'>hourglass_full</i>
+            <input id='FinCuestionario' type='text' class='validate infoEstu' disabled value='<?php echo ($interval->format('%H Horas %I Minutos %S Segundos.'));?>'>
+            <label for='FinCuestionario'>Tiempo utilizado</label>
         </div>
 
         <div class='input-field col s12 m6'>
@@ -98,11 +98,10 @@
             <label for='FinCuestionario'>Fin del cuestionario</label>
         </div>
 
-
         <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>hourglass_full</i>
-            <input id='FinCuestionario' type='text' class='validate infoEstu' disabled value='<?php echo ($interval->format('%H Horas %I Minutos %S Segundos.'));?>'>
-            <label for='FinCuestionario'>Tiempo utilizado</label>
+            <i class='material-icons prefix'>graphic_eq</i>
+            <input id='PuntajeObtenido' type='text' class='validate infoEstu' disabled value='<?php echo $ResultCuestEstu['puntaje_final'] ." / 5";?>'>
+            <label for='PuntajeObtenido'>Nota final obtenida</label>
         </div>
 
         <div class='input-field col s12 m6'>
@@ -115,54 +114,60 @@
 </div>
 
 
-<div class="progress">
-      <div class="indeterminate"></div>
-</div>
 <br>
 
 <div class="row">
-
-    <div class="card-panel center small col s12 m6 l3 ToolsticBlanco ">
-        <h5>Puntaje global</h5>
-        <i class="medium material-icons blue-text">equalizer</i>
-        <h3 style="margin-top: 0em;">
-            <?php echo ($Puntaje_Final*100);?> <span class="grey-text" style="font-size:2rem">/ 500 <code style="font-size:1rem">Pts.</code></span> 
-        </h3>
+    <div class= "col s12 m6 l3">
+        <div class="card-panel center small  ToolsticBlanco ">
+            <h5>Puntaje global</h5>
+            <i class="medium material-icons blue-text">equalizer</i>
+            <h3 style="margin-top: 0em;">
+                <?php echo ($Puntaje_Final*100);?> <span class="grey-text" style="font-size:2rem">/ 500 <code style="font-size:1rem">Pts.</code></span> 
+            </h3>
+        </div>
     </div>
 
-    <div class="card-panel center small col s12 m6 l3 ToolsticBlanco ">
-        <h5>Desempeño global</h5>
-        <i class="medium material-icons blue-text">done_all</i>
-        <h3 style="margin-top: 0em;">
-            <?php echo ( $Nivel_Final );?> <span class="grey-text" style="font-size:2rem"> <code style="font-size:1rem">dg.</code></span> 
-        </h3>
+    <div class= "col s12 m6 l3">
+        <div class="card-panel center small ToolsticBlanco ">
+            <h5>Desempeño global</h5>
+            <i class="medium material-icons blue-text">done_all</i>
+            <h3 style="margin-top: 0em;">
+                <?php echo ( $Nivel_Final );?> <span class="grey-text" style="font-size:2rem"> <code style="font-size:1rem">dg.</code></span> 
+            </h3>
+        </div>
     </div>
     
-    <div class="card-panel small center col s12 m6 l3 ToolsticBlanco ">
-        <h5>Fortaleza Compe. <b><?php echo $arrayResuComp[0]['competencia'];?></b> </h5>
-        <i class="medium material-icons green-text">arrow_upward</i>
-        <h3 style="margin-top: 0em;">
-            <?php echo ($arrayResuComp[0]['Puntaje']*100);?> <span class="grey-text" style="font-size:2rem">/ <?php echo $arrayResuComp[0]['NoPre'];?> <code style="font-size:1rem">Pts.</code></span> 
-        </h3>
+    <div class= "col s12 m6 l3">
+        <div class="card-panel small center ToolsticBlanco ">
+            <h5>Fortaleza Compe. <b><?php echo $arrayResuComp[0]['competencia'];?></b> </h5>
+            <i class="medium material-icons green-text">arrow_upward</i>
+            <h3 style="margin-top: 0em;">
+                <?php echo ($arrayResuComp[0]['Puntaje']*100);?> <span class="grey-text" style="font-size:2rem">/ <?php echo $arrayResuComp[0]['NoPre'];?> <code style="font-size:1rem">Pts.</code></span> 
+            </h3>
+        </div>
     </div>
 
-    <div class="card-panel small center col s12 m6 l3 ToolsticBlanco ">
-        <h5>Debilidad Compe. <b><?php echo $arrayResuComp[3]['competencia'];?></b></h5>
-        <i class="medium material-icons red-text">arrow_downward</i>
-        <h3 style="margin-top: 0em;">
-            <?php echo ($arrayResuComp[3]['Puntaje']*100);?> <span class="grey-text" style="font-size:2rem">/ <?php echo $arrayResuComp[3]['NoPre'];?> <code style="font-size:1rem">Pts.</code></span> 
-        </h3>
+    <div class= "col s12 m6 l3">
+        <div class="card-panel small center ToolsticBlanco ">
+            <h5>Debilidad Compe. <b><?php echo $arrayResuComp[3]['competencia'];?></b></h5>
+            <i class="medium material-icons red-text">arrow_downward</i>
+            <h3 style="margin-top: 0em;">
+                <?php echo ($arrayResuComp[3]['Puntaje']*100);?> <span class="grey-text" style="font-size:2rem">/ <?php echo $arrayResuComp[3]['NoPre'];?> <code style="font-size:1rem">Pts.</code></span> 
+            </h3>
+        </div>
     </div>
 </div>
     
 
     
             
-<div class="row" style="margin-top: -180px !important;">
-    <br>
-    <div class="row center">
-        <h4>Resultados detallados</h4>
-    </div>
+<div class="row" >
+
+    <br> <br>    
+        <div class="row center">
+            <h4>Resultados detallados</h4>
+        </div>
+    <br> <br>
 
     <div class="col s12 m6 l3">
         <div class="card ">
@@ -175,7 +180,7 @@
             </span>
             <br>
             <div class="row">
-                <span class="card-title activator">
+                <span class="card-title activator title-compe">
                 <b>C1</b> - Alfabetización Informacional
                 </span>
                 <hr>
@@ -201,7 +206,9 @@
                 <div class="row center">
                     <span>
                         <code>Nivel de desempeño: </code> 
-                        <b class="badgeB <?php echo $arrayCompetencias[0]['Color']; ?> white-text"><?php echo $Nivel_C1;?></b>
+                        <div class='chip <?php echo $arrayCompetencias[0]['Color']; ?> white-text'>
+                            <span><b> <?php echo $Nivel_C1;?> </b></span>
+                        </div>
                     </span>
                 </div>
                 
@@ -232,7 +239,7 @@
                 <i class="material-icons right">more_vert</i>
             </span> <br>
             <div class="row">
-            <span class="card-title activator">
+            <span class="card-title activator title-compe">
                 <b>C2</b> - Resolución de problemas computacionales
             </span>
             <hr>
@@ -256,7 +263,9 @@
                 <div class="row center">
                     <span>
                         <code>Nivel de desempeño: </code> 
-                        <b class="badgeB <?php echo $arrayCompetencias[1]['Color']; ?> white-text"><?php echo $Nivel_C2;?></b>
+                        <div class='chip <?php echo $arrayCompetencias[1]['Color']; ?> white-text'>
+                            <span><b> <?php echo $Nivel_C2;?> </b></span>
+                        </div>
                     </span>
                 </div>
                 
@@ -285,7 +294,7 @@
                 <i class="material-icons right">more_vert</i>
             </span> <br>
             <div class="row">
-                <span class="card-title activator">
+                <span class="card-title activator title-compe">
                     <b>C3</b> - Comunicación y colaboración
                 </span>
                 <hr>
@@ -309,8 +318,10 @@
                 <br>
                 <div class="row center">
                     <span>
-                        <code>Nivel de desempeño: </code> 
-                        <b class="badgeB <?php echo $arrayCompetencias[2]['Color']; ?> white-text"><?php echo $Nivel_C3;?></b>
+                        <code>Nivel de desempeño: </code>
+                        <div class='chip <?php echo $arrayCompetencias[2]['Color']; ?> white-text'>
+                            <span><b> <?php echo $Nivel_C3;?> </b></span>
+                        </div>                         
                     </span>
                 </div>
             
@@ -341,7 +352,7 @@
                 <i class="material-icons right">more_vert</i>
             </span> <br>
             <div class="row">
-                <span class="card-title activator">
+                <span class="card-title activator title-compe">
                     <b>C4</b> -  Creación y publicación digital
                 </span>
                 <hr>
@@ -366,7 +377,9 @@
                 <div class="row center">
                     <span>
                         <code>Nivel de desempeño: </code> 
-                        <b class="badgeB <?php echo $arrayCompetencias[3]['Color']; ?> white-text"><?php echo $Nivel_C4;?></b>
+                        <div class='chip <?php echo $arrayCompetencias[3]['Color']; ?> white-text'>
+                            <span><b> <?php echo $Nivel_C4;?> </b></span>
+                        </div>
                     </span>
                 </div>
 
@@ -394,12 +407,56 @@
 <div class="row ">
     <div class="col s12 m12 l8">
         <ul class="collection with-header">
-            <li class="collection-header"><h4>Resultados por competencias</h4>Un resumen de cada pregunta y su puntaje correspondiente</li>
-            <li class="collection-item"><div>Alfabetización Informacional<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-            <li class="collection-item"><div>Resolución de problemas con el uso de recursos computacionales.<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-            <li class="collection-item"><div>Comunicación y colaboración en entornos digitales.<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-            <li class="collection-item"><div>Creación y publicación de contenido digital.<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-            <li class="collection-item"><div><b>Resultados totales</b><a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+
+            <li class="collection-header">
+                <h4>Resultados por competencias</h4>
+                <p> Un resumen del nivel obtenido para cada competencia y sus evidencias alcanzadas </p>
+            </li>
+
+            <li class="collection-item">
+                <div> 
+                    Alfabetización Informacional
+                    <a href="#!" class="secondary-content"> 
+                        <i class="material-icons ToolsticVerde-text">send</i>
+                    </a>
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <div>
+                    Resolución de problemas con el uso de recursos computacionales.
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons ToolsticVerde-text">send</i>
+                    </a>
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <div>
+                    Comunicación y colaboración en entornos digitales.
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons ToolsticVerde-text">send</i>
+                    </a>
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <div>
+                    Creación y publicación de contenido digital.
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons ToolsticVerde-text">send</i>
+                    </a>
+                </div>
+            </li>
+
+            <li class="collection-item ToolsTic_azul white-text">
+                <div class="">
+                    <b>Resultados totales</b>
+                    <a href="#!" class="secondary-content">
+                        <i class="material-icons white-text">send</i>
+                    </a>
+                </div>
+            </li>
         </ul>
     </div>
 

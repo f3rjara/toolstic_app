@@ -32,13 +32,10 @@
     </div> <br>
 </div>
 
-<div class='row'>
+<div class='row' style = 'margin-top: 2rem;  margin-bottom: 5rem;'>
+
+
     <div class="col s12 m12 l10 push-l1">
-        <div class='input-field col s12 m6'>
-            <i class='material-icons prefix'>description</i>
-            <input id='EstadoCuestionario' type='text' class='validate infoEstu' disabled value='<?php echo $ResultCuestEstu['estado_cuestionario'];?>'>
-            <label for='EstadoCuestionario'>Estado cuestionario</label>
-        </div>
 
         <?php
             list($fechaIniCues, $horaIniCues) = explode(" ",$ResultCuestEstu['inicio_cuestionario']);
@@ -66,6 +63,12 @@
             <input id='FinCuestionario' type='text' class='validate infoEstu' disabled value='<?php echo $fechaFinCuestionario." a las ".$horaFinCuestionario;?>'>
             <label for='FinCuestionario'>Fin del cuestionario</label>
         </div>
+        
+        <div class='input-field col s12 m6'>
+            <i class='material-icons prefix'>description</i>
+            <input id='EstadoCuestionario' type='text' class='validate infoEstu' disabled value='<?php echo $ResultCuestEstu['estado_cuestionario'];?>'>
+            <label for='EstadoCuestionario'>Estado cuestionario</label>
+        </div>
 
         <div class='input-field col s12 m6'>
             <i class='material-icons prefix'>graphic_eq</i>
@@ -78,5 +81,8 @@
                 <i class='material-icons right'>poll</i>
                 ver resultados detallados</a>
         </div>
+
     </div>
+
+    
 </div>

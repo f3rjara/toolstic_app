@@ -668,7 +668,7 @@ function decodificar_quest($quest){
 
 
 function checkReslut ( $conex , $estudiante ) {
-    $EstudianteResultados = "SELECT * FROM resultado_cuestionario WHERE cod_estudiante = '".$estudiante."'";
+    $EstudianteResultados = "SELECT * FROM resultado_cuestionario WHERE cod_estudiante = '".$estudiante."' ORDER BY id_cuestionario DESC";
     $resutlSql = $conex->query($EstudianteResultados);
     if( $resutlSql->num_rows > 0 ){ 
         $res = TRUE;

@@ -5,6 +5,8 @@
     include_once (ROOT_MAIN.'/views/sesion_student.php'); 
     if( $_SESSION['error_user'] != FALSE && $_SESSION['user_student'] == NULL) { header('Location: '.ROOT_MEDIA_USER.'/');   }   
     $_SESSION['dataReport'] = FALSE;
+    $_SESSION['btnPresentaPrueba'] = FALSE;
+    $_SESSION['UserInteraction'] = FALSE;
 ?>
 
 <html lang="es">
@@ -33,7 +35,7 @@
     </div>
     
     <?php            
-        include (ROOT_MAIN.'/views/menu_student.php');   
+        include (ROOT_MAIN.'/views/menu_student.php'); 
         //ActualizaEstadoPrueba($conex); 
     ?>
        

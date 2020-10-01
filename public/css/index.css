@@ -307,3 +307,8 @@ PARA MOSTAR LOS RESULTADOS SERIA EN LISTAR PREGUNTAS
 .mainTT {
     min-height: 63vh !important;
 }
+
+.title-compe{ 
+    text-align: left;
+    padding-left: 2rem;
+}
