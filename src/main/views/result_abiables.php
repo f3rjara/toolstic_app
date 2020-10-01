@@ -42,6 +42,9 @@
             $id_grupo = $insEstu['data']['id_grupo'];
             $PrueEstu = FullDatosInsctipcion($id_grupo, $conex);
             $FullCuestionario = EstudianteFullCuestionario($id_inscripcion, $userlog['cod_estudiante'], $conex);
+
+            include_once (ROOT_MAIN.'/views/show_result_student.php'); 
+
         ?>
     </div>
     <br><br>
