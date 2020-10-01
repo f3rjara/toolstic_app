@@ -488,7 +488,7 @@ function UpdateEstudianteFin($cod_estu, $conex){
 };
 
 //FUNCION QUE ME CALCULA  EL RESUMEN DEL RESULTADO 
-function SaveResultCuestionario($cod_estudiante, $id_cuestionario, $conex){
+function SaveResultCuestionario( $cod_estudiante, $id_cuestionario, $conex ){
     
     $SqlData = "SELECT rta_enviada_estudiante.cod_estudiante, rta_enviada_estudiante.id_cuestionario, competencia.id_competencia, competencia.peso_competencia, rta_enviada_estudiante.id_pregunta,  rta_enviada_estudiante.id_opcion_respuesta, opcion_respuesta.peso_opcion_respuesta, opcion_respuesta.puntaje_opcion_respuesta FROM rta_enviada_estudiante, opcion_respuesta, pregunta, tarea, evidencia, competencia WHERE rta_enviada_estudiante.id_opcion_respuesta = opcion_respuesta.id_opcion_respuesta AND pregunta.id_tarea = tarea.id_tarea AND tarea.id_evidencia = evidencia.id_evidencia AND evidencia.id_competencia = competencia.id_competencia AND rta_enviada_estudiante.id_pregunta = pregunta.id_pregunta AND rta_enviada_estudiante.cod_estudiante = '".$cod_estudiante."' AND rta_enviada_estudiante.id_cuestionario = '".$id_cuestionario."' ORDER BY competencia.id_competencia ASC";
 
@@ -667,6 +667,20 @@ function decodificar_quest($quest){
 }
 
 
+function checkReslut ( $conex , $estudiante ) {
+    $EstudianteResultados = "SELECT * FROM resultado_cuestionario WHERE cod_estudiante = '".$estudiante."'";
+    $resutlSql = $conex->query($EstudianteResultados);
+    if( $resutlSql->num_rows > 0 ){ 
+        $res = TRUE;
+        $datosCues = $resutlSql->fetch_assoc();   
+    }
+    else {
+        $res = FALSE;
+        $datosCues = NULL;   
+    }
 
+    $result = array("result"=> $res ,"data" => $datosCues);
+    return $result;
+}
 
 ?>

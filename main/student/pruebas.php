@@ -47,10 +47,8 @@
                 $EstudianteInscritoPrueba = EstudianteInscrito($userlog['cod_estudiante'], $conex);
                 $EstudianteReload = DatosEstudiantesReload($conex, $userlog['cod_estudiante']);
                                 
-                if($EstudianteReload['estudiante_habilitado'] == 1  || $EstudianteReload['realizo_prueba'] != 0){ ?>
+                if($EstudianteReload['estudiante_habilitado'] == 1  || $EstudianteReload['realizo_prueba'] != 0) { 
 
-                    <?php
-                    
                     if($EstudianteInscritoPrueba['bandera'] == FALSE){
 
                         if(pruebasActive($conex)) 
@@ -62,7 +60,6 @@
                         }
                     }
                     else{
-
                         include_once (ROOT_MAIN.'/views/student_inscrito_grupo.php');                         
                     }
                 }
@@ -115,12 +112,7 @@
             
             mostrarDatosMenu(<?php echo $userlog['cod_estudiante']; ?>)      
             $('.tooltipped').tooltip();
-
-            function imprimirMain() {
-                alert("Configure los ajustes de la hoja, cambie la escala a 75 para una mejor visualización.");
-                window.print();
-            }
-                
+                            
         });   
     </script>          
       

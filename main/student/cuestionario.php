@@ -44,7 +44,7 @@
         </nav> 
     </div>
 
-    <main style="min-height: 70vh;" >  <br><br>
+    <main class="mainTT" >  <br><br>
         <div class="row">
             <?php
                 // CHECK STRIC NEW OR OLD CUEST.

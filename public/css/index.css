@@ -303,3 +303,7 @@ PARA MOSTAR LOS RESULTADOS SERIA EN LISTAR PREGUNTAS
 .RespCard {
     cursor: pointer !important;
 }
+
+.mainTT {
+    min-height: 63vh !important;
+}

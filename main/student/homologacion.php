@@ -38,12 +38,13 @@
     ?>
            
 
-    <main style="min-height: 70vh;" >  
+    <main class="mainTT" >  
     <br>
         <div class="row">
             <div class="col s12 m10 push-m1 center">
                 <?php 
-                    $EstudianteReload = DatosEstudiantesReload($conex, $userlog['cod_estudiante']);                             
+                    $EstudianteReload = DatosEstudiantesReload($conex, $userlog['cod_estudiante']);   
+                                              
                     if( $EstudianteReload['estudiante_habilitado'] == 1 ) { 
                         $EstudianteInscritoPrueba = EstudianteInscrito($userlog['cod_estudiante'], $conex);
 
@@ -99,8 +100,15 @@
                         }
                     }
                     else{
-                        // ESTUDIANTE NO ESTA HABLITADO 
-                        include_once (ROOT_MAIN.'/views/student_not_abiable.php'); 
+                        if( $EstudianteReload['realizo_prueba'] !== 0 ) { 
+                            $ResultCuestEstu  = FullDataResulCuestEstu($conex, $userlog['cod_estudiante']);
+                            // ESTUDIANTE YA PRESENTO UNA PRUEBA
+                            include_once (ROOT_MAIN.'/views/student_presented.php'); 
+                        }
+                        else {
+                            // ESTUDIANTE NO ESTA HABLITADO 
+                            include_once (ROOT_MAIN.'/views/student_not_abiable.php'); 
+                        }
                     }
                 ?>
             </div>
