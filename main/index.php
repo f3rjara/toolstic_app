@@ -77,15 +77,32 @@
 
                             <div class="row">
                                 <div class="col s10 push-s1">
-                                    <a onclick="PwLost()" id="aPwLost" style="cursor: pointer;" class=" right red-text"><b>Olvide mi contraseña</b></a>
+                                    <a onclick="PwLost()" id="aPwLost" style="cursor: pointer;" class=" right white-text btn red col s6"><b>Olvide mi contraseña</b></a>
                                 </div>                                
                             </div>
                             <div class="row">
-                            <div class="col s10 push-s1">
-                                <a href="./register.php" class="right blue-text modal-trigger"><b>Registrarme</b></a>
+                                <div class="col s10 push-s1">
+                                    <a href="./#" style="display:none" class="right blue-text modal-trigger"><b>Registrarme</b></a>
+                                </div>
                             </div>
+                            <br>
+                            <div class="row">
+                                <div class="col s10 push-s1">
+                                    <a href="#AyudaFrecu" class="right ToolsTic_Verde btn white-text modal-trigger col s6"><b>Para tener en cuenta</b></a>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="row">
+                                <div class="col s10 push-s1">
+                                    <a href="http://sapiens.udenar.edu.co:5033/#/buscar-codigo" target="_blanck" class="right ToolsTic_Verde btn white-text col s6"><b>Conocer mi código</b></a>
+                                </div>
+                            </div>
+
+                            
+
                                 
-                            </div>
+                            
                         </form>
                         
                     </div>
@@ -97,7 +114,9 @@
 
     <br> <br> <br></main>
     
-   
+    <?php include ROOT_PATH.'/public/requiere/ayuda.php'; ?>
+    <?php include ROOT_PATH.'/public/requiere/codigo.php'; ?>
+    
     <!--INCLUSION DE FOOTER POR PHP  -->  
     <?PHP include ROOT_INCLUDE.'/footer.php'; ?>    
     <!--INCLUSION DE SCRIPTS JS POR PHP  -->

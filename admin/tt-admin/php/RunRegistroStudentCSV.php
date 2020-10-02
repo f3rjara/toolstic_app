@@ -10,6 +10,10 @@
     $ArchivoCSV = $_FILES["FRE_ArchivoCSV"];     
     $explode_name = explode('.',$ArchivoCSV['name']);
     $archivotmp = $_FILES['FRE_ArchivoCSV']['tmp_name'];
+
+    $FechaServer = ObtenerDateTime() ;
+
+    $dateEstudent = $FechaServer['date'];
  
 //cargamos el archivo
     if($explode_name[1] == 'csv'){        
@@ -35,13 +39,13 @@
 
                     $id_programa=str_ireplace($buscar,$reemplazar,$datos[6]);   
                     
-                    $pwEs = md5($datos[0]);
+                    $pwEs = md5($datos[1]);
                     
-                    $SqlRegisto =  "INSERT INTO estudiante(cod_estudiante,num_documento,nombres_estudiante,apellidos_estudiante,password_estudiante,correo_estudiante,semestre_estudiante,id_programa,realizo_prueba,estudiante_habilitado) VALUES('".$cod_estudiante."', '".$num_identificacion."','".$nombres_estudiante."','".$apellidos_estudiante."','".$pwEs."','".$correo_estudiante."','".$semestre_estudiante."','".$id_programa."','0','1')";
+                    $SqlRegisto =  "INSERT INTO estudiante(cod_estudiante,num_documento,nombres_estudiante,apellidos_estudiante,password_estudiante,correo_estudiante,semestre_estudiante,id_programa,realizo_prueba,estudiante_habilitado, is_logged , logined) VALUES('".$cod_estudiante."', '".$num_identificacion."','".$nombres_estudiante."','".$apellidos_estudiante."','".$pwEs."','".$correo_estudiante."','".$semestre_estudiante."','".$id_programa."','0','1' , '0' , '".$dateEstudent."')";
 
                     $ResultSQl = $conex->query($SqlRegisto);  
                     if($ResultSQl == true){             
-                        $restext = "Se registraron los estudiantes conexito";
+                        $restext = "Se registraron los estudiantes con exito";
                         $respuesta = true; 
                     }
                     else{  

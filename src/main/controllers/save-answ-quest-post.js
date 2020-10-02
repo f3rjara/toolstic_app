@@ -27,8 +27,7 @@ function SaveAnswerPost(arrayRes){
           },
           //dataType: 'json',
           url: GetUrl.ROOT_MAIN_CON + "/models/SaveAnswerPost.php",       
-          success: function(res){   
-              console.log(res);
+          success: function(res){  
               var data = jQuery.parseJSON(res);         
               console.log(data['restext']);
               if(!data['res']){

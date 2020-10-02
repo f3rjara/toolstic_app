@@ -111,7 +111,7 @@ jQuery(document).on('submit','#formlg', function(event){
     })
     
     .fail(function(resp){
-        console.log("Response received");
+        console.log("fail recivied");
         console.log(resp.responseText);        
     })
     

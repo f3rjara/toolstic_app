@@ -40,7 +40,8 @@
                     </div>
                     
                     <div class="card-action center">
-                        <a href="<?php echo ROOT_MEDIA;?>/ocw_tools/" class="btn btnCard ToolsTic_Verde col s12">
+                        <!-- <?php // echo ROOT_MEDIA;?>/ocw_tools/ -->
+                        <a href="#" class="btn btnCard ToolsTic_Verde col s12">
                             Acceder al Open Course
                         </a>
                     </div>
@@ -88,7 +89,8 @@
                     </div>
                     
                     <div class="card-action center">
-                        <a href="<?php echo ROOT_MEDIA;?>/moodle_tools" class="btn btnCard ToolsTic_Verde col s12">Acceder a ToolsTIC</a>
+                        <!--<?php //echo ROOT_MEDIA;?>/moodle_tools -->
+                        <a href="#" class="btn btnCard ToolsTic_Verde col s12">Acceder a ToolsTIC</a>
                     </div>
                 </div>
             </div>

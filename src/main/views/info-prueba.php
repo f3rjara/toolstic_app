@@ -131,8 +131,11 @@
                     <b>Paso a paso de la plataforma </b>
                 </div>
                 <div class="collapsible-body">
-                    <div class="row">
-                        <span>Lorem ipsum dolor sit amet.</span>
+                    <div class="row">                        
+                        <h4 class="ToolsTic_Verde-text center">PARA TENER EN CUENTA</h4>        
+                        <img src="<?php echo ROOT_PUBLIC; ?>/img/infografia_1.jpeg" width="80%" alt="">
+                        <br>
+                        <img src="<?php echo ROOT_PUBLIC; ?>/infografia_2.jpeg" width="80%" alt="">
                     </div>
                 </div>
             </li>

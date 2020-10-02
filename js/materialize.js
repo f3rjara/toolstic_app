@@ -1,4 +1,4 @@
-/*
+
 $(document).keydown(function (event) {
   if (event.keyCode == 123) { 
     // Prevent F12
