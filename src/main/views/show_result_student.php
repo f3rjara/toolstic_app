@@ -100,7 +100,7 @@
 
         <div class='input-field col s12 m6'>
             <i class='material-icons prefix'>graphic_eq</i>
-            <input id='PuntajeObtenido' type='text' class='validate infoEstu' disabled value='<?php echo $ResultCuestEstu['puntaje_final'] ." / 5";?>'>
+            <input id='PuntajeObtenido' type='text' class='validate infoEstu' disabled value='<?php echo $Puntaje_Final ." / 5";?>'>
             <label for='PuntajeObtenido'>Nota final obtenida</label>
         </div>
 

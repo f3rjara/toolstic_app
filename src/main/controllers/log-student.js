@@ -48,16 +48,64 @@ jQuery(document).on('submit','#formlg', function(event){
             setTimeout(function(){ location.href = GetUrl.ROOT_MEDIA_USER +'/student/index.php'; }, 1500);
         }
         else {
-            console.log(respuesta);
+            console.log(respuesta.mens);
             console.log("User Negaded");            
             Swal.fire({
                 position: 'bottom-end',
                 type: 'error',
-                title: 'Usuario o contraseña incorrectos',
+                title: respuesta.mens, 
                 showConfirmButton: false,                
                 backdrop: 'rgba(208, 29, 86,0.3)',
                 timer: 1500
-            });            
+            });
+
+            setTimeout(() => {
+                if( respuesta.log ) {  
+
+                    Swal.fire({
+                        title: 'Desea cerrar sesión?',
+                        text: "Ya tiene una sesión iniciada en otro navegador, ¿desea cerrar todas las sesiones, e iniciar una nueva aquí? \n  Tu prueba puede ser invalidada!. ",
+                        type: 'warning',
+                        showCancelButton: true,
+                        cancelButtonText: 'No, conservarla',
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Si, cerrar sesión!'
+                    })
+                    .then((result) => {
+                        if(result.value) {
+                            $.ajax({
+                                type: "POST",
+                                data: {student:respuesta.student},
+                                //dataType: 'json',
+                                url: GetUrl.ROOT_MAIN_CON +"/models/close_session.php",       
+                                success: function(respuesta){ 
+                                    console.log(respuesta); 
+                                    var data = jQuery.parseJSON(respuesta);
+                                    console.log(data);
+                                    console.log("******");
+                                    if(respuesta['res'] === false){
+                                        Swal.fire(
+                                            'Uppps!',
+                                            respuesta['restext'],
+                                            'error'
+                                        );       
+                                    }
+                                    else {
+                                        Swal.fire(
+                                            'Realizado!',
+                                            respuesta['restext'],
+                                            'success'
+                                        ); 
+                                    }
+                                }
+                            }); 
+                        };
+                    });
+
+                }
+            }, 1800);     
+            
             document.getElementById('btnInicia').innerHTML = 'Iniciar Sesión';    
         } 
     })

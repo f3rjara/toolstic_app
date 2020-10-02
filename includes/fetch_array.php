@@ -631,7 +631,7 @@ function FullDataResulCuestEstu($conex, $cod) {
     cuestionario, estado_cuestionario, resultado_cuestionario WHERE 
     cuestionario.cod_estudiante = '".$cod."' AND 
     cuestionario.id_estado_cuestionario = estado_cuestionario.id_estado_cuestionario AND 
-    resultado_cuestionario.id_cuestionario = cuestionario.id_cuestionario";
+    resultado_cuestionario.id_cuestionario = cuestionario.id_cuestionario ORDER BY cuestionario.id_cuestionario DESC";
     
     $ResultInfo = $conex->query($SqlInfoInsc);
    

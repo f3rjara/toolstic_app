@@ -37,7 +37,7 @@
 
         <?php            
             include (ROOT_MAIN.'/views/menu_student.php');   
-            //ActualizaEstadoPrueba($conex); 
+            ActualizaEstadoPrueba($conex); 
         ?>
        
         <br>

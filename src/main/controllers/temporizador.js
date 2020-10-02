@@ -1,6 +1,6 @@
 //SE ANALIZA LA FECHA DE INGRESO AL SISTEMA
 function TemporizadorDesde(min){
-  var minu = ( 90 - parseInt(min) ) - 1;  
+  var minu = ( 91 - parseInt(min) );  
   var fechaInicio = new Date();
   fechaInicio.setMinutes(fechaInicio.getMinutes()+minu);
   

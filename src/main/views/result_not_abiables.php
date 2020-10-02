@@ -32,8 +32,8 @@
 
 <div class='row'>
     <div class="col s12 m12 center">
-        <div class='chip orange white-text'>
-            <span><b>PRUEBA NO DISPONIBLE</b></span>
+        <div class='chip red white-text'>
+            <span><b>RESULTADOS NO DISPONIBLE</b></span>
         </div> 
         <div class='chip ToolsTic_blue white-text'>
             <span><b>Tenga muy presente la fecha y hora para presentar el cuestionario.</b></span>

@@ -17,6 +17,8 @@ $tipoDoc  = $_POST['tipoDoc'];
 $NumDocEstudiante  = $_POST['NumDocEstudiante'];  
 $telefonoEstudiante =$_POST['telefonoEstudiante'];
 
+$FechaServer = ObtenerDateTime();
+$FechaHoy = $FechaServer['date'];
 
 
 $SqlExisteUsuario = "SELECT COUNT(*) AS numUsuarios FROM estudiante WHERE estudiante.cod_estudiante = '".$codEstudiante."'";
@@ -43,7 +45,7 @@ else if($total_Correos > 0){
     echo json_encode(array("res"=>$respuesta,"restext"=>$restext)); 
 }
 else if($total_Usuarios == 0 && $total_Correos == 0){
-    $sqlNewStudent = "INSERT INTO estudiante (cod_estudiante, tipo_documento, num_documento, nombres_estudiante, apellidos_estudiante, password_estudiante, correo_estudiante, telefono_estudiante, semestre_estudiante, id_programa, realizo_prueba, estudiante_habilitado) VALUES ('".$codEstudiante."', '".$tipoDoc."', '".$NumDocEstudiante."', '".$nameEstudiante."', '".$apellidoEstudiante."', '".$passEstudiante."' , '".$correoEstudiante."' , '".$telefonoEstudiante."', '".$semestreEstudiante."' , '".$idprogramaEstudiante."','0','1')";
+    $sqlNewStudent = "INSERT INTO estudiante (cod_estudiante, tipo_documento, num_documento, nombres_estudiante, apellidos_estudiante, password_estudiante, correo_estudiante, telefono_estudiante, semestre_estudiante, id_programa, realizo_prueba, estudiante_habilitado, is_logged , logined) VALUES ('".$codEstudiante."', '".$tipoDoc."', '".$NumDocEstudiante."', '".$nameEstudiante."', '".$apellidoEstudiante."', '".$passEstudiante."' , '".$correoEstudiante."' , '".$telefonoEstudiante."', '".$semestreEstudiante."' , '".$idprogramaEstudiante."','0','1','0', '".$FechaHoy."')";
         
     $EjecutaInsert = $conex->query($sqlNewStudent);        
     if($EjecutaInsert == true){             
