@@ -1,27 +1,9 @@
 <?php
-session_start();
-
-$obj = new stdClass();
-$obj->name = "Nick";
-$obj->surname = "Doe";
-$obj->age = 20;
-$obj->adresse = null;
-
-// $stdObject referred to this object (stdObject).
-echo $obj->name . " " . $obj->surname . " have " . $obj->age . " yrs old. And live in " . $obj->adresse;
-
-$_SESSION['prueba'] = $obj;
-echo "<br>";
-
-//var_dump($_SESSION['prueba']);
-//echo($_SESSION['prueba']->name);
+include_once ($_SERVER['DOCUMENT_ROOT'].'/config_.php');
+include (ROOT_INCLUDE."/connect.php");  
+include_once (ROOT_INCLUDE.'/fetch_array.php'); 
 
 
-var_dump($_SESSION['ReportData']);
+$data = ObtenerOpcionesRespuestasRandom(13, $conex) ;
 
-echo "<hr>";
-$full = json_decode($_SESSION['ReportData']);
-var_dump($full);
-echo "<hr>";
-echo($full->nombre_completo);
 ?>

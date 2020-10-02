@@ -1,0 +1,23 @@
+.collapsible-header i{    
+    padding-top: 6px;
+}
+.collapsible-header span{
+    font-weight: 700;
+    padding-top: 5px;
+}
+
+.collapsible-header:hover {
+    background-color:rgba(0, 0, 250, 0.08);
+}
+
+
+table.highlightTD > tbody > tr > td{
+-webkit-transition: background-color .25s ease;
+transition: background-color .25s ease;
+transition: 2s all;
+}
+
+
+table.highlightTD > tbody > tr > td:hover {
+background-color: rgba(90, 190, 230, 0.661);
+transition: 2s all;

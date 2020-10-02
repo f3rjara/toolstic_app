@@ -1,0 +1,60 @@
+/* TRAER FONTS DE GOOGLE */
+/* font-family: 'Pacifico', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+
+
+
+/* PIE DE PAGINA SIEMPRE ABAJO */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;    
+}
+
+main {
+    flex: 1 0 auto;
+    position: relative;
+}
+
+.footer-copyright b
+{
+    top: -6px;
+    position: relative;
+    
+}
+
+
+
+/* CAJA DE FORMULARIOS CENTRADA */
+#caja-formularios{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%);
+    position: absolute;          
+}
+/* DISEÑO DE TARJETAS Y HOVER */
+.card{
+    transition: 2s all !important;    
+}
+.card:hover{       
+    box-shadow: 0 0 20px #0e193a;
+    transform: translateY(-2%);
+    transition: 1s all;
+}
+.card a.btn {
+    background: #0e193a;        
+}
+
+.card a.btn:hover {
+    background: #f15a5d;
+    transition: 1 all;       
+}
+
+.info_studen{
+    border-radius: 0px 0px 10px 10px;
+}
+
+.info_student_card{
+    margin-top: -80px !important;
+}

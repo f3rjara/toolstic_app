@@ -1,0 +1,175 @@
+/* TRAER FONTS DE GOOGLE */
+/* font-family: 'Pacifico', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+
+
+/* COLORES PRINCIPALES UTILIZADOS */
+
+.ToolsticAzul    { background-color: #0e193a !important; } /*rgb(14, 25, 58)*/
+.ToolsticAzulC    { background-color: #08ADDE !important; } /*rgb(67, 70, 71)*/
+.ToolsticRojo    { background-color: #f15a5d !important; } /*rgb(241, 90, 93)*/
+.ToolsticVerde    { background-color: #279691 !important; } /*rgb(39, 150, 145)*/
+.ToolsticBlanco    { background-color: #FBFBFF !important; } /*rgb(251, 251, 255)*/
+
+
+.ToolsticAzul-text    { color: #0e193a !important; } /*rgb(14, 25, 58)*/
+.ToolsticAzulC-text    { color: #08ADDE !important; } /*rgb(67, 70, 71)*/
+.ToolsticRojo-text    { color: #f15a5d !important; } /*rgb(241, 90, 93)*/
+
+/* PIE DE PAGINA SIEMPRE ABAJO */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    position: relative;
+    
+}
+
+nav{    
+    z-index: 1000;
+}
+
+#slide-out
+{
+    z-index: 1001;
+}
+
+.footer-copyright b
+{
+    top: -6px;
+    position: relative;
+}
+
+/* SCROLL Personalizado */
+body::-webkit-scrollbar, #modalTerminos-content::-webkit-scrollbar,#iframe-curricular::-webkit-scrollbar
+{
+    width: 12px;
+    background: transparent;
+    
+}
+
+.tabs::-webkit-scrollbar
+{
+    height: 9px;    
+}
+    
+
+
+body::-webkit-scrollbar-thumb,#iframe-curricular::-webkit-scrollbar-thumb, #modalTerminos-content::-webkit-scrollbar-thumb,.tabs::-webkit-scrollbar-thumb
+{
+    border-radius: 8px;
+    background: #2c5971;
+}
+
+
+body::-webkit-scrollbar-thumb:hover,#iframe-curricular::-webkit-scrollbar-thumb:hover, #modalTerminos-content::-webkit-scrollbar-thumb:hover, .tabs::-webkit-scrollbar-thumb:hover
+{    
+    background: #019140; 
+    cursor: pointer;
+}
+
+
+
+
+
+/* FIN DE SCROLL Personalizado */
+
+.row {
+    margin-bottom: 0;
+}
+.col-iz{
+    height: 82.5vh; 
+    padding-bottom: 0;
+}
+
+.col-der{
+    height: 82.5vh; 
+}
+
+.col-iz img{
+    position: relative;
+    top: 50%;   
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#caja-formularios{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%);
+    position: relative;          
+}
+
+@media only screen and (max-width: 601px) {
+    .col-der{
+        background-color: #08ADDE !important;
+    }
+    
+    .tabs::-webkit-scrollbar
+    {
+        height: 4px !important;
+    }
+        
+    .error{    
+        position: absolute;
+        width: 90% !important;;  
+        left: 5% !important;;
+    }
+}
+
+
+
+
+.error {
+    background: rgba(241, 90, 93) !important;
+    position: absolute;
+    width: 30%;
+    height: 96px;
+    z-index: 10001;
+    top: 80%;
+    left: 68%;    
+    
+}
+
+.error span {
+    margin: auto;
+    font-size: 20px;
+}
+
+
+#menu_nav{
+    background: #0e193a;
+    border-radius: 90%;
+    transition: all 1s;
+   
+}
+
+#menu_nav:hover{
+    background-color: #279691;
+    border-radius: 30%;
+    transition: all 1s;
+}
+
+
+
+.user-data span 
+{
+    top: -6px;
+    position: relative;
+}
+
+.btn_elimina{
+    cursor: pointer;
+}
+/*
+PARA MOSTAR LOS RESULTADOS SERIA EN LISTAR PREGUNTAS
+.TexArea > .table td{
+    border: 1px solid #ddd;
+    padding: 5%;
+    width: 5%;  
+}

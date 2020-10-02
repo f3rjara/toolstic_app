@@ -231,12 +231,47 @@ function ObtenerOpcionesRespuestas($IdPrg, $conex){
     
     $ResultSql = $conex->query($SqlRespuestas);
 
-    while($datos =  $ResultSql->fetch_assoc()){
-        $datosArray[] = (array("id_opcion_respuesta"=>$datos['id_opcion_respuesta'],"id_pregunta"=>$datos['id_pregunta'], "opcion_respuesta"=>$datos['opcion_respuesta'], "peso_opcion_respuesta"=>$datos['peso_opcion_respuesta'], "puntaje_opcion_respuesta"=>$datos['puntaje_opcion_respuesta']));
+    while($datos =  $ResultSql->fetch_assoc()) {
+        $datosArray[] = ( array( 
+            "id_opcion_respuesta"=>$datos['id_opcion_respuesta'],
+            "id_pregunta"=>$datos['id_pregunta'], 
+            "opcion_respuesta"=>$datos['opcion_respuesta'], 
+            "peso_opcion_respuesta"=>$datos['peso_opcion_respuesta'], 
+            "puntaje_opcion_respuesta"=>$datos['puntaje_opcion_respuesta']) 
+        );
     };
 
     return $datosArray;
 }
+
+//FUNCION QUE ME OBTIENE TODAS LAS RESPUESTAS DE UNA PREGUNTA 
+function ObtenerOpcionesRespuestasRandom($IdPrg, $conex){
+    $SqlRespuestas = "SELECT opcion_respuesta.* FROM opcion_respuesta, pregunta WHERE opcion_respuesta.id_pregunta = pregunta.id_pregunta AND opcion_respuesta.id_pregunta = '".$IdPrg."'";
+    
+    $ResultSql = $conex->query($SqlRespuestas);
+
+    while( $datos =  $ResultSql->fetch_assoc() ) {
+        $datosArray[] = ( array(
+            "id_opcion_respuesta"=>$datos['id_opcion_respuesta'],
+            "id_pregunta"=>$datos['id_pregunta'], 
+            "opcion_respuesta"=>$datos['opcion_respuesta'], 
+            "peso_opcion_respuesta"=>$datos['peso_opcion_respuesta'], 
+            "puntaje_opcion_respuesta"=>$datos['puntaje_opcion_respuesta'])
+        );
+    };
+    
+    $newData = array(); 
+    $rand = range(0, 3);
+    shuffle($rand);
+    foreach ($rand as $val) {
+        array_push($newData, $datosArray[$val]);       
+    }
+    array_push($newData, $datosArray[4]);
+
+    return $newData;
+}
+
+
 
 //FUNCION QUE OBTIENE EL ID DE  COMPETENCIA EVIDENCIA Y TAREA DE LA PREGUNTA 
 function ObtenerICETprg($IdPrg, $conex){

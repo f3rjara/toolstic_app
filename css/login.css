@@ -1,0 +1,100 @@
+/* TRAER FONTS DE GOOGLE */
+/* font-family: 'Pacifico', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+
+
+
+
+/* SCROLL Personalizado */
+body::-webkit-scrollbar, #modalTerminos-content::-webkit-scrollbar,#iframe-curricular::-webkit-scrollbar
+{
+    width: 12px;
+    background: transparent;
+    
+}
+.tabs::-webkit-scrollbar
+{
+    height: 9px;    
+}
+
+body::-webkit-scrollbar-thumb,#iframe-curricular::-webkit-scrollbar-thumb, #modalTerminos-content::-webkit-scrollbar-thumb,.tabs::-webkit-scrollbar-thumb
+{
+    border-radius: 8px;
+    background: #2c5971;
+}
+
+
+body::-webkit-scrollbar-thumb:hover,#iframe-curricular::-webkit-scrollbar-thumb:hover, #modalTerminos-content::-webkit-scrollbar-thumb:hover, .tabs::-webkit-scrollbar-thumb:hover
+{    
+    background: #019140; 
+    cursor: pointer;
+}
+
+/*FIN DE SCROLL Personalizado */
+
+
+#caja-formularios{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%)translateY(-20%);
+       
+}
+
+@media only screen and (max-width: 601px) {
+    .col-der{
+        background-color: #08ADDE !important;
+    }
+    
+    .tabs::-webkit-scrollbar
+    {
+        height: 4px !important;
+    }
+        
+    .error{    
+        position: absolute;
+        width: 90% !important;;  
+        left: 5% !important;;
+    }
+}
+
+
+
+
+.error {
+    background: rgba(241, 90, 93) !important;
+    position: absolute;
+    width: 30%;
+    height: 96px;
+    z-index: 10001;
+    top: 80%;
+    left: 68%;    
+    
+}
+
+.error span {
+    margin: auto;
+    font-size: 20px;
+}
+
+
+#menu_nav{
+    background: #0e193a;
+    border-radius: 90%;
+    transition: all 1s;
+   
+}
+
+#menu_nav:hover{
+    background-color: #279691;
+    border-radius: 30%;
+    transition: all 1s;
+}
+
+
+
+.user-data span 
+{
+    top: -6px;
+    position: relative;
+}

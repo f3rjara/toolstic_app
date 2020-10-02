@@ -1,7 +1,7 @@
 <div class="row" style="display:none" >
     <?php 
     //style="display:none"
-        $ResPregExa = ObtenerOpcionesRespuestas($FullPregunCues[$prgs -1]['id_pregunta'], $conex);          
+        $ResPregExa = ObtenerOpcionesRespuestasRandom($FullPregunCues[$prgs -1]['id_pregunta'], $conex);          
                 
         if ( isset( $FullPregunCues[$prgs -1]['id_opcion_respuesta'] ) && $NumPrgSave > 0 && ( $FullPregunCues[$prgs -1]['id_opcion_respuesta']) % 5 != 0 ) 
         {
